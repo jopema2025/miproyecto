@@ -14,6 +14,7 @@ html {
 
 body {
   overflow: hidden;
+  overflow-y: auto;
   color: rgba(255, 255, 255, 0.5);
   font-family: "Russo One", arial, sans-serif;
   line-height: 1.25;
@@ -78,6 +79,7 @@ body {
   position: absolute;
   mix-blend-mode: lighten;
   transform: translateZ(0);
+  z-index: 1;
 }
 
 .controls {
@@ -824,9 +826,8 @@ span {
   align-items: center;
   gap: 10px;
   padding: 20px 0;
-  max-width: 100%;
-  z-index: 10;
   position: relative;
+  z-index: 10;
 }
 
 .balloon {
@@ -841,6 +842,7 @@ span {
   align-items: center;
   font-size: 2em;
   color: white;
+  z-index: 10;
 }
 
 .balloon::after {
@@ -854,10 +856,10 @@ span {
   background: #a12c54;
 }
 
-@media (max-width: 768px) {
-  .balloon {
-    width: 50px;
-    height: 70px;
-    font-size: 1.5em;
-  }
+h1,
+h1.super-awesome {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
 }
