@@ -2271,7 +2271,16 @@ if (IS_HEADER) {
 	setTimeout(() => {
 		soundManager.preload()
 		.then(
-			init,
+			() => {
+				init();
+
+				// 👇 Esta es la línea que debes agregar para activar sonido con el primer clic
+				document.addEventListener('click', () => {
+					if (!store.state.soundEnabled) {
+						toggleSound(true);
+					}
+				}, { once: true });
+			},
 			reason => {
 				init();
 				// setLoadingStatus('Error Loading Audio');
